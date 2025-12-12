@@ -1,0 +1,85 @@
+/* Login.css */
+
+/* Reset box-sizing agar padding tidak menambah lebar elemen */
+* {
+  box-sizing: border-box;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f3f4f6; /* Setara bg-gray-100 */
+}
+
+.login-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Setara shadow-md */
+  width: 20rem; /* Setara w-80 (80 * 0.25rem) */
+}
+
+.login-title {
+  font-size: 1.5rem; /* Setara text-2xl */
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: #1f2937;
+}
+
+.error-message {
+  color: #ef4444; /* Setara text-red-500 */
+  font-size: 0.875rem; /* Setara text-sm */
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* Margin bottom yang lebih besar untuk grup terakhir sebelum tombol */
+.form-group.mb-large {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem; /* Setara text-sm */
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  color: #374151;
+}
+
+.form-input {
+  width: 100%;
+  border: 1px solid #e5e7eb; /* Warna border default tailwind */
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  border-color: #3b82f6; /* Biru saat fokus */
+  ring: 2px solid #3b82f6;
+}
+
+.btn-submit {
+  width: 100%;
+  background-color: #3b82f6; /* Setara bg-blue-500 */
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+  background-color: #2563eb; /* Setara hover:bg-blue-600 */
+}

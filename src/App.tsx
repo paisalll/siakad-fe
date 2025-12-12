@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-// import StudentDashboard from './pages/student/Dashboard';
-import TeacherDashboard from './pages/teacher/Dashboard.tsx';
-// import AdminDashboard from './pages/admin/Dashboard';
-// import PrincipalDashboard from './pages/principal/Dashboard';
-import Login from './pages/Login.tsx';
+import StudentDashboard from './pages/student/Dashboard';
+import TeacherDashboard from './pages/teacher/Dashboard';
+import AdminDashboard from './pages/admin/Dashboard';
+import PrincipalDashboard from './pages/principal/Dashboard';
+import Login from './pages/Login';
 import type { JSX } from 'react';
 
 // Helper sederhana untuk proteksi route
@@ -26,8 +26,7 @@ function App() {
         {/* Route Siswa */}
         <Route path="/siswa/*" element={
           <ProtectedRoute allowedRole="SISWA">
-            <div></div>
-            {/* <StudentDashboard /> */}
+            <StudentDashboard />
           </ProtectedRoute>
         } />
 
@@ -41,16 +40,14 @@ function App() {
         {/* Route Admin */}
         <Route path="/admin/*" element={
           <ProtectedRoute allowedRole="ADMIN">
-            <div></div>
-            {/* <AdminDashboard /> */}
+            <AdminDashboard />
           </ProtectedRoute>
         } />
         
         {/* Route Kepsek */}
         <Route path="/kepsek/*" element={
           <ProtectedRoute allowedRole="KEPSEK">
-            {/* <PrincipalDashboard /> */}
-            <div></div>
+            <PrincipalDashboard />
           </ProtectedRoute>
         } />
       </Routes>

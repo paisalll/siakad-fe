@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './Login.css'; // Import file CSS di sini
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -32,37 +33,38 @@ const Login = () => {
         default: setError('Role tidak dikenali');
       }
     } catch (err) {
-      setError('ID & Password Salah'); // Sesuai pesan error di diagram
+      setError('ID & Password Salah');
     }
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <form onSubmit={handleLogin} className="bg-white p-8 rounded shadow-md w-80">
-        <h2 className="text-2xl mb-4 font-bold text-center">SIAKAD Login</h2>
-        {error && <div className="text-red-500 text-sm mb-2 text-center">{error}</div>}
+    <div className="login-container">
+      <form onSubmit={handleLogin} className="login-form">
+        <h2 className="login-title">SIAKAD Login</h2>
         
-        <div className="mb-4">
-          <label className="block text-sm font-bold mb-1">ID / NIP / NIS</label>
+        {error && <div className="error-message">{error}</div>}
+        
+        <div className="form-group">
+          <label className="form-label">ID / NIP / NIS</label>
           <input 
             type="text" 
-            className="w-full border p-2 rounded"
+            className="form-input"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
         
-        <div className="mb-6">
-          <label className="block text-sm font-bold mb-1">Password</label>
+        <div className="form-group mb-large">
+          <label className="form-label">Password</label>
           <input 
             type="password" 
-            className="w-full border p-2 rounded"
+            className="form-input"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         
-        <button className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+        <button type="submit" className="btn-submit">
           Masuk
         </button>
       </form>
